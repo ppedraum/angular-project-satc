@@ -1,0 +1,14 @@
+<p-toolbar>
+  <ng-template #start>
+    @for(b of toolbarButtons(); track $index; let i = $index){
+    <p-button
+      [icon]="b.icon"
+      [label]="b.label"
+      [class]="b.class"
+      text
+      [severity]="b.severity"
+      (onClick)="setToolbarButtonActive(i)"
+    />
+    }
+  </ng-template>
+</p-toolbar>
