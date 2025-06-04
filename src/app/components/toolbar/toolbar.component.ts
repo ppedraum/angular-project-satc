@@ -1,17 +1,19 @@
 import { Component, signal } from '@angular/core';
 import { ToolbarModule } from 'primeng/toolbar';
 import { ButtonModule, ButtonSeverity } from 'primeng/button';
+import { RouterLink } from '@angular/router';
 
 type ToolbarButton = {
   icon: string;
   label: string;
   class?: string;
   severity: ButtonSeverity;
+  route: string;
 };
 
 @Component({
   selector: 'app-toolbar',
-  imports: [ToolbarModule, ButtonModule],
+  imports: [ToolbarModule, ButtonModule, RouterLink],
   templateUrl: './toolbar.component.html',
 })
 export class ToolbarComponent {
@@ -21,17 +23,20 @@ export class ToolbarComponent {
       label: 'Dash',
       class: 'mr-2',
       severity: 'secondary',
+      route: 'dashboard',
     },
     {
       icon: 'pi pi-list',
       label: 'List',
       class: 'mr-2',
       severity: 'secondary',
+      route: 'list',
     },
     {
       icon: 'pi pi-plus',
       label: 'Add',
       severity: 'secondary',
+      route: 'add',
     },
   ]);
 
